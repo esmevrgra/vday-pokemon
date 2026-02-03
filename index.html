@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valentine 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app">
+
+    <!-- 1) ASK -->
+    <section class="screen pink active" id="screen-ask">
+      <h1 class="title">Hiiiiii</h1>
+      <h2 class="subtitle">Can I be your Valentine?</h2>
+
+      <img class="character" src="assets/s-cat.png" alt="cute character" />
+
+      <p class="tiny" id="tryAgain">try again…</p>
+
+      <div class="btnStack">
+        <button class="btn yes" id="yesBtn">Yess Ofc!!</button>
+        <button class="btn no" id="noBtn">Eww Nooo</button>
+      </div>
+
+      <img class="star star1" src="assets/bulb.png" alt="" />
+      <img class="star star2" src="assets/bulb.png" alt="" />
+    </section>
+
+    <!-- 2) NO SCREEN (after a few no clicks) -->
+    <section class="screen purple" id="screen-no">
+      <img class="character" src="assets/mad-chikawa.png" alt="mad character" />
+      <button class="btn no" id="tryAgainBtn">IDC try again...</button>
+    </section>
+
+    <!-- 3) YES -> GIFT -->
+    <section class="screen pink" id="screen-gift">
+      <h2 class="subtitle">Yayyy!<br/>You said Yes!!!</h2>
+
+      <button class="imgBtn" id="openGiftBtn" aria-label="open gift">
+        <img class="big" src="assets/gift.png" alt="gift" />
+      </button>
+
+      <p class="tiny">open the gift hehe</p>
+    </section>
+
+    <!-- 4) POKEBALL OPEN -->
+    <section class="screen yellow" id="screen-pokeball">
+      <p class="tiny">click to open…</p>
+
+      <button class="imgBtn" id="openBallBtn" aria-label="open pokeball">
+        <img class="big" src="assets/mad-button.png" alt="pokeball button or pokeball" />
+      </button>
+
+      <!-- If you have an actual pokeball image, replace src above with it -->
+    </section>
+
+    <!-- 5) REVEAL -->
+    <section class="screen pink" id="screen-reveal">
+      <h2 class="subtitle">Yayyy!<br/>I choose youuu!</h2>
+
+      <div class="pokeGrid">
+        <img class="poke" src="assets/gengar.png" alt="gengar" />
+        <img class="poke" src="assets/pip.png" alt="piplup" />
+        <img class="poke" src="assets/bulb.png" alt="bulbasaur (or bulb)" />
+        <img class="poke" src="assets/son-shark.png" alt="snorlax/shark" />
+      </div>
+
+      <button class="imgBtn" id="nextBtn" aria-label="next">
+        <img class="uiBtn" src="assets/next-button.png" alt="next button" />
+      </button>
+    </section>
+
+    <!-- 6) LETTER -->
+    <section class="screen pink" id="screen-letter">
+      <img class="corner" src="assets/son-shark.png" alt="" />
+
+      <p class="letter">
+        Thank you for being so nice to me. I hate expressing my feelings
+        but I guesss I will try to be more expressive with you.
+      </p>
+
+      <img class="envelope" src="assets/envelope.png" alt="envelope" />
+
+      <button class="imgBtn homeWrap" id="homeBtn" aria-label="home">
+        <img class="uiBtn" src="assets/home-button.png" alt="home button" />
+      </button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
