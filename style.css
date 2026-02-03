@@ -3,21 +3,30 @@
   --purple:#a7a6dd;
   --yellow:#fff1a6;
 
-  --text:#7a1e2b;
+  --text:#B21414;
+
 
   --yesScale: 1;
   --noScale: 1;
+
+
 }
 
 *{ box-sizing:border-box; }
 
-body{
-  margin:0;
-  min-height:100svh;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background:#fff;
   color:var(--text);
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  font-family: "Baloo 2";
 }
+
 
 .app{
   min-height:100svh;
@@ -61,7 +70,7 @@ body{
 }
 
 .big{
-  width:min(72%, 260px);
+  width:min(72%, 460px);
   height:auto;
 }
 
@@ -69,7 +78,9 @@ body{
   margin:0;
   font-weight:800;
   opacity:.85;
+  font-size: clamp(18px, 4.5vw, 26px);
 }
+
 
 #tryAgain{
   opacity:0;
@@ -109,6 +120,13 @@ body{
 .btn.yes{ transform: scale(var(--yesScale)); }
 .btn.no{ background:#e65060; transform: scale(var(--noScale)); }
 
+.bigNo{
+  font-size: 22px;
+  padding: 20px 30px;
+  min-width: 260px;
+}
+
+
 .imgBtn{
   border:none;
   background:transparent;
@@ -122,6 +140,61 @@ body{
   height:auto;
 }
 
+.nextWrap
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.nextWrap .uiBtn{
+  width: 180px; /* adjust if needed */
+  height: auto;
+}
+
+.nextText{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: lowercase;
+
+  pointer-events: none; /* keeps button clickable */
+}
+
+.homeText{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(18px, 5vw, 24px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: lowercase;
+
+  pointer-events: none;
+}
+
+.homeWrap{
+  position: absolute;
+  right: 24px;
+  bottom: 32px;
+  display: inline-block;
+}
+
+
+
 .pokeGrid{
   width:100%;
   display:grid;
@@ -134,45 +207,135 @@ body{
   max-width: 160px;
   height:auto;
 }
+/* Pokeball screen */
+.topText{
+  margin-top: 8px;
+}
+
+.pokeballImg{
+  width: min(70%, 260px);
+  height: auto;
+  image-rendering: pixelated; /* makes sprites crisp */
+}
+
+/* Stars on pokeball screen */
+.star{
+  position: absolute;
+  width: 42px;
+  height: auto;
+  opacity: 0.95;
+}
+
+.star.s1
+{ top: 51px; 
+  left: 34px; 
+  width: 86px; 
+}
+
+.star.s2
+{ top: 120px; 
+  right: 58px; 
+  width: 86px; 
+}
+
+.star.s3
+{ bottom: 119px;
+   left: 48px; 
+   width: 94px; 
+}
+
+.star.s4
+{ bottom: 50px; 
+  right: 29px; 
+  width: 89px; 
+}
+
 
 .letter{
-  margin:0;
-  font-weight:900;
-  font-size: clamp(16px, 4vw, 20px);
-  line-height:1.35;
-  text-align:left;
-  padding: 0 6px;
+  font-family: "Baloo 2", system-ui, sans-serif;
+  font-weight: 800;
+
+  font-size: clamp(18px, 4.5vw, 22px);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+
+  color: #B21414;
+  max-width: 320px;
+
+  background: rgba(255,255,255,0.35);
+  padding: 16px 18px;
+  border-radius: 18px;
+
+  text-align: center;
+  margin-top: 200px;
 }
 
-.envelope{
-  width: 150px;
-  height:auto;
-  align-self:flex-start;
-  margin-left: 6px;
+#screen-letter{
+  position: relative;
+  justify-content: flex-start;
 }
+
+
+.envelope{
+  position: absolute;
+  bottom: 140px;
+  left: 24px;
+  width: 200px;
+  transform: rotate(-8deg);
+
+}
+
+
 
 .corner{
   position:absolute;
-  top:14px;
+  top:34px;
   right:14px;
-  width: 70px;
+  width: 140px;
   height:auto;
   opacity:.9;
 }
+.shark{
+  transform: rotate(-23deg);
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+}
 
-.star{
+.corn {
+  position:absolute;
+  top:62px;
+  right:224px;
+  width: 140px;
+  height:auto;
+  opacity:.9;
+  transform: rotate(33deg);  
+}
+
+.star {
   position:absolute;
   width: 36px;
   height:auto;
   opacity:.85;
 }
-.star1{ top: 20px; right: 22px; }
-.star2{ bottom: 26px; left: 22px; }
+.star1
+{ 
+  top: 20px; 
+  right: 22px;
+  width: 75px; 
 
-.homeWrap{
-  align-self:flex-end;
-  margin-right: 6px;
 }
+.star2
+{ 
+  bottom: 26px; 
+  left: 320px; 
+  width: 80px;
+}
+.star3 
+{ 
+  bottom: 360px; 
+  left: 22px; 
+  width: 75px;
+}
+
 
 @media (max-width:360px){
   .uiBtn{ width: 150px; }
